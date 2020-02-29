@@ -1,45 +1,43 @@
 /* lato-300 - latin */
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 300;
-  src: local('Lato Light'), local('Lato-Light'),
-       url('assets/fonts/Lato-Light.ttf') format('truetype');
+  src: local("Lato Light"), local("Lato-Light"),
+       url("assets/fonts/Lato-Light.ttf") format("truetype");
 }
 /* lato-regular - latin */
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'),
-       url('assets/fonts/Lato-Regular.ttf') format('truetype');
+  src: local("Lato Regular"), local("Lato-Regular"),
+       url("assets/fonts/Lato-Regular.ttf") format("truetype");
 }
 /* lato-700 - latin */
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'),
-       url('assets/fonts/Lato-Bold.ttf') format('truetype');
+  src: local("Lato Bold"), local("Lato-Bold"),
+       url("assets/fonts/Lato-Bold.ttf") format("truetype");
 }
 /* lato-900 - latin */
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 900;
-  src: local('Lato Black'), local('Lato-Black'),
-       url('assets/fonts/Lato-Black.ttf') format('truetype');
+  src: local("Lato Black"), local("Lato-Black"),
+       url("assets/fonts/Lato-Black.ttf") format("truetype");
 }
 /* Reset style.css */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	border: 0;
-	/* font-size: 100%; */
-	/* font-weight: normal; */
 	vertical-align: baseline;
   background: transparent;
-  box-sizing: border-box;
 }
 
 ul {
@@ -48,7 +46,7 @@ ul {
 
 body {
   background-color: #000000;
-  font-family: "Lato", serif;
+  font-family: "Lato", "Verdana", sans-serif;
 }
 
 .wrapper {
@@ -59,9 +57,9 @@ body {
 /* header and navigation */
 header {
   height: 95px;
+  padding: 27px 40px 0;
   background-color: #2d303a;
   box-shadow: inset 0px -6px #323746;
-  padding: 27px 40px 0;
 }
 
 .hide-heading {
@@ -70,11 +68,11 @@ header {
 }
 
 .header-grid {
-  height: 30px;
   display: grid;
   grid-template-columns: auto;
   grid-auto-flow: column;
   align-items: end;
+  height: 30px;
 }
 
 .navigation-list {
@@ -87,23 +85,23 @@ header {
 }
 
 .navigation-list a {
+  text-decoration: none;
   color: #ffffff;
   transition: color 0.2s;
-  text-decoration: none;
 }
 
 .navigation-list a:hover {
-  color: #f06c64;
   text-decoration: none;
+  color: #f06c64;
 }
 
 .logo * {
   display: inline;
   font-size: 25px;
   line-height: 25px;
-  color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .asterisk-red {
@@ -115,17 +113,17 @@ nav {
 }
 
 .navigation-dot {
-  color: #62677c;
   padding: 0 12px;
+  color: #62677c;
 }/* header and navigation */
 
 /* slider */
 .slider {
+  display: grid;
+  grid-template-columns: 98px 1fr 98px;
   height: 600px;
   background-color: #f06c64;
   box-shadow: inset 0px -6px #ea676b;
-  display: grid;
-  grid-template-columns: 98px 1fr 98px;
 }
 
 .viewport {
@@ -139,12 +137,12 @@ nav {
 }
 
 .left-pointer {
-  background-image: url('assets/chev.png');
   height: 27px;
   width: 16px;
-  transition: filter 0.2s;
-  filter: opacity(50%);
   margin: 281px auto 0;
+  background-image: url("assets/chev.png");
+  filter: opacity(50%);
+  transition: filter 0.2s;
 }
 
 .left-area-pointer:hover .left-pointer {
@@ -161,13 +159,13 @@ nav {
 }
 
 .right-pointer {
-  transform: rotate(180deg);
-  background-image: url('assets/chev.png');
+  transform: rotate(180deg);  
   height: 27px;
   width: 16px;
-  transition: filter 0.2s;
-  filter: opacity(50%);
   margin: 281px auto 0;
+  background-image: url("assets/chev.png");
+  filter: opacity(50%);
+  transition: filter 0.2s;
 }
 
 .right-area-pointer:hover .right-pointer {
@@ -180,10 +178,10 @@ nav {
 
 /* content in slider */
 .vertical-phone {
-  display: inline-block;
   position: relative;
   top: 37px;
   left: 112px;
+  display: inline-block;
 }
 
 .vertical-phone .phone {
@@ -193,27 +191,26 @@ nav {
 
 .vertical-phone .shadow {
   position: absolute;
-  left: 0px;
   z-index: 8;
 }
 
 .vertical-phone .screen {
   position: absolute;
-  height: 333px;
-  width: 188px;
   top: 65px;
   left: 14px;
   z-index: 10;
-  background-image: url('assets/Layer 6.png');
+  height: 333px;
+  width: 188px;
+  background-image: url("assets/Layer 6.png");
   background-position: -14px -135px;
 }
 
 .horizontal-phone {
-  display: inline-block;
   position: relative;
   top: 158px;
   left: 879px;
   transform: rotate(90deg);
+  display: inline-block;
 }
 
 .horizontal-phone .phone {
@@ -224,19 +221,18 @@ nav {
 .horizontal-phone .shadow {
   position: absolute;
   top: -26px;
-  left: 0px;
   transform: rotateX(180deg);
 }
 
 .horizontal-phone .screen {
   position: absolute;
-  height: 188px;
-  width: 333px;
   top: 138px;
   left: -58px;
   transform: rotate(270deg);
   z-index: 10;
-  background-image: url('assets/Layer 5.png');
+  height: 188px;
+  width: 333px;
+  background-image: url("assets/Layer 5.png");
   background-position: -125px -119px;
 }/* content in slider */
 
@@ -254,18 +250,18 @@ nav {
 }
 
 .our-services>h2 {
-  padding: 62px 0 0;
+  
   height: 96px;
+  padding: 62px 0 0;
   font-size: 30px;
   line-height: 30px;
   font-weight: 900;
   text-transform: capitalize;
-  /* text-align: left; */
 }
 
 .our-services>p {
-  padding: 17px 0 0;
   height: 86px;
+  padding: 17px 0 0;
   font-size: 18px;
   line-height: 30px;
   font-weight: 300;
@@ -273,11 +269,11 @@ nav {
 }
 
 .service-list {
-  padding: 36px 0 0;
   display: grid;
   grid-template: repeat(2, 123px) / repeat(3, 300px);
   grid-gap: 0px 10px;
   justify-content: space-between;
+  padding: 36px 0 0;
 }
 
 .service {
@@ -288,8 +284,8 @@ nav {
 }
 
 .service img {
-  padding: 2px 0 0;
   grid-area: 1 / 1 / 3 / 2;
+  padding: 2px 0 0;
 }
 
 .service h3 {
@@ -301,11 +297,11 @@ nav {
 
 .service p {
   height: 68px;
+  overflow: hidden;
   font-size: 12px;
   line-height: 22px;
   font-weight: 400;
   text-align: justify;
-  overflow: hidden;
 }
 
 .service-1{
