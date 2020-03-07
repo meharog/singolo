@@ -1,0 +1,225 @@
+/* lato-300 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"), local("Lato-Light"),
+       url("assets/fonts/Lato-Light.ttf") format("truetype");
+}
+/* lato-regular - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"),
+       url("assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+/* lato-700 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Lato Bold"), local("Lato-Bold"),
+       url("assets/fonts/Lato-Bold.ttf") format("truetype");
+}
+/* lato-900 - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Lato Black"), local("Lato-Black"),
+       url("assets/fonts/Lato-Black.ttf") format("truetype");
+}
+/* Reset style.css */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Lato", "Verdana", sans-serif;
+  background-color: #000000;
+}
+
+.wrapper {
+  width: 1020px;
+  margin: 0 auto;
+}
+
+/* section 'get-a-quote' */
+.get-a-quote {
+  height: 654px;
+  padding: 27px 40px 0;
+  background-color: #f06c64;
+  box-shadow: inset 0px -6px #ea676b;
+}
+
+.get-a-quote>h2 {
+  margin-top: 36px;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 900;
+  color: #f0d8d9;
+}
+
+.get-a-quote>p {
+  height: 57px;
+  margin-top: 21px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+  text-align: justify;
+  color: #f0d8d9;
+}
+
+.get-a-quote-grid {
+  display: grid;
+  grid-template-columns: 620px 300px;
+  grid-gap: 0 20px;
+  height: 300px;
+  margin-top: 46px;
+}
+
+input, textarea {/* TO DO: merge in 'Reset style.css' */
+  box-sizing: border-box;
+}
+
+.input {
+  height: 38px;
+  width: calc(100% - 1px);
+  margin: 0 0 16px;
+  padding: 9px 13px;
+  font-family: "Lato", "Verdana", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: #f0d8d9;
+  background-color: #d6564f;  
+  border: 1px solid #d6564f;
+  border-radius: 5px;
+}
+
+.input::placeholder {
+  color: #f48c8f;
+}
+
+.input :active, :focus {
+  outline: none;
+}
+
+.input:invalid {
+  border: 1px solid #b61f17;
+}
+
+.input-text {
+  height: 202px;
+  resize: none;
+}
+
+.button {
+  position: relative;
+  bottom: 57px;
+  left: 640px;
+  display: inline-block;
+  height: 38px;
+  width: 100px;
+  color: #f0d8d9;
+  background-color: #d6564f;
+  border: 1px solid #c93932;
+  border-radius: 5px;
+}
+
+.button:hover {
+  height: 38px;
+  width: 100px;
+  color: #b61f17;
+  background-color: #d6564f;
+  border: 1px solid #b61f17;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-information>h3 {
+  margin-top: 1px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 900;
+  text-transform: capitalize;
+  color: #f0d8d9;
+}
+
+.contact-information>p {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: justify;
+  color: #f0d8d9;
+}
+
+.contact-information>address {
+  margin-top: 21px;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #f0d8d9;
+}
+
+.contact-information>address li {
+  height: 22px;
+}
+
+.contact-icon {
+  display: inline-block;
+  width: 13px;
+  margin-right: 10px;
+  text-align: center;
+
+}/* section 'get-a-quote' */
+
+/* footer */
+footer {
+  height: 76px;
+  padding: 0 40px 0;
+  background-color: #2d303a;
+}
+
+.footer-grid {
+  padding: 22px 0 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  align-items: center;
+  height: 32px;
+}
+
+.copyright {
+  margin-top: -5px;
+  font-size: 12px;
+  line-height: 22px;
+  color: #666d89;
+}
+
+.social-media-link-list{/* TO DO: do not add in merge index */
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-gap: 0 8px;
+  justify-self: end;
+}
+
+.social-media-link {/* TO DO: do not add in merge index */
+  filter: opacity(50%);
+  transition: filter 0.2s;
+}
+
+.social-media-link:hover {/* TO DO: do not add in merge index */
+  filter: opacity(100%);
+}/* footer */
