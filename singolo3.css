@@ -90,18 +90,23 @@ body {
 
 input, textarea {/* TO DO: merge in 'Reset style.css' */
   box-sizing: border-box;
+  padding: 0;
+}
+
+.form {/* for button position absolute */
+  position: relative;
 }
 
 .input {
   height: 38px;
   width: calc(100% - 1px);
   margin: 0 0 16px;
-  padding: 9px 13px;
+  padding: 0 13px;
   font-family: "Lato", "Verdana", sans-serif;
   font-size: 12px;
   line-height: 15px;
   color: #f0d8d9;
-  background-color: #d6564f;  
+  background-color: #d6564f;
   border: 1px solid #d6564f;
   border-radius: 5px;
 }
@@ -110,26 +115,39 @@ input, textarea {/* TO DO: merge in 'Reset style.css' */
   color: #f48c8f;
 }
 
-.input :active, :focus {
-  outline: none;
+.input::-ms-input-placeholder {
+  color: #f48c8f;
+}
+
+.input:focus, .button:focus {
+  outline: none;/* Chrome */
 }
 
 .input:invalid {
+  box-shadow: none;/* Firefox */
+  outline: none;/* Microsoft Edge */
+}
+
+.input:focus:required:invalid {
   border: 1px solid #b61f17;
 }
 
 .input-text {
   height: 202px;
   resize: none;
+  padding-top: 9px;
 }
 
 .button {
-  position: relative;
-  bottom: 57px;
+  position: absolute;
   left: 640px;
-  display: inline-block;
+  top: 326px;
+  display: block;
   height: 38px;
   width: 100px;
+  font-family: "Lato", "Verdana", sans-serif;
+  font-size: 12px;
+  line-height: 12px;
   color: #f0d8d9;
   background-color: #d6564f;
   border: 1px solid #c93932;
@@ -139,13 +157,14 @@ input, textarea {/* TO DO: merge in 'Reset style.css' */
 .button:hover {
   height: 38px;
   width: 100px;
-  color: #b61f17;
+  color: #ffffff;
   background-color: #d6564f;
   border: 1px solid #b61f17;
   border-radius: 5px;
   cursor: pointer;
-}
+}/* section 'get-a-quote' */
 
+/* section 'contact-information' */
 .contact-information>h3 {
   margin-top: 1px;
   font-size: 18px;
@@ -182,8 +201,18 @@ input, textarea {/* TO DO: merge in 'Reset style.css' */
   width: 13px;
   margin-right: 10px;
   text-align: center;
+}
 
-}/* section 'get-a-quote' */
+.contact-information a {
+  text-decoration: none;
+  color: #f0d8d9;
+  transition: color 0.2s;
+}
+
+.contact-information a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}/* section 'contact-information' */
 
 /* footer */
 footer {

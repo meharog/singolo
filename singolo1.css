@@ -75,6 +75,30 @@ header {
   height: 30px;
 }
 
+.logo>* {
+  display: inline;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.asterisk-red {
+  color: #f06c64;
+}
+
+nav {
+  justify-self: end;
+}
+
+.navigation-list>li:nth-child(-n+4)::after {
+  content: "·";
+  padding: 0 12px;
+  color: #62677c;
+}
+
 .navigation-list {
   display: inline-grid;
   grid-auto-flow: column;
@@ -93,28 +117,6 @@ header {
 .navigation-list a:hover {
   text-decoration: none;
   color: #f06c64;
-}
-
-.logo * {
-  display: inline;
-  font-size: 25px;
-  line-height: 25px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.asterisk-red {
-  color: #f06c64;
-}
-
-nav {
-  justify-self: end;
-}
-
-.navigation-dot {
-  padding: 0 12px;
-  color: #62677c;
 }/* header and navigation */
 
 /* slider */

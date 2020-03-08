@@ -76,6 +76,7 @@ body {
   font-size: 18px;
   line-height: 30px;
   font-weight: 300;
+  text-align: justify;
   color: #767e9e;
 }
 
@@ -102,7 +103,7 @@ body {
 .portfolio-select:hover {
   color: #dedede;
   border: 1px solid #c5c5c5;
-  cursor: default;
+  cursor: pointer;
 }
 
 .portfolio-sample-list {
@@ -139,6 +140,7 @@ body {
   font-size: 18px;
   line-height: 30px;
   font-weight: 300;
+  text-align: justify;
   color: #767e9e;
 }
 
@@ -168,6 +170,7 @@ body {
   font-size: 12px;
   line-height: 21px;
   font-weight: 400;
+  text-align: justify;
   color: #767e9e;
 }
 
