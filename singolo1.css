@@ -203,7 +203,7 @@ nav {
   z-index: 10;
   height: 333px;
   width: 188px;
-  background-image: url("assets/Layer 6.png");
+  background-image: url("assets/slide/Layer 6.png");
   background-position: -14px -135px;
 }
 
@@ -234,7 +234,7 @@ nav {
   z-index: 10;
   height: 188px;
   width: 333px;
-  background-image: url("assets/Layer 5.png");
+  background-image: url("assets/slide/Layer 5.png");
   background-position: -125px -119px;
 }/* content in slider */
 
