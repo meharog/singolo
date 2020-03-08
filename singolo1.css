@@ -264,6 +264,7 @@ nav {
 .our-services>p {
   height: 86px;
   padding: 17px 0 0;
+  overflow: hidden;
   font-size: 18px;
   line-height: 30px;
   font-weight: 300;
@@ -291,6 +292,8 @@ nav {
 }
 
 .service h3 {
+  height: 20px;
+  overflow: hidden;
   font-size: 18px;
   line-height: 18px;
   font-weight: 900;
