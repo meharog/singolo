@@ -388,9 +388,8 @@ nav {
 .portfolio-sample-list {
   display: grid;
   grid-template: repeat(3, 187px) / repeat(4, 220px);
-  grid-gap: 10px 10px;
+  grid-gap: 20px 10px;
   justify-content: space-between;
-  align-content: space-between;
   height: 601px;
   margin-top: 19px;
   overflow: hidden;
