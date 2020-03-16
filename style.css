@@ -56,6 +56,9 @@ body {
 
 /* header and navigation */
 header {
+  position: sticky;
+  top: 0px;
+  z-index: 100;
   height: 95px;
   padding: 27px 40px 0;
   background-color: #2d303a;
@@ -114,9 +117,13 @@ nav {
   transition: color 0.2s;
 }
 
-.navigation-list a:hover {
-  text-decoration: none;
+.navigation-list a.active {
   color: #f06c64;
+  cursor: default;
+}
+
+.navigation-list a:not(.active):hover {
+  color: #ec9f9b;
 }/* header and navigation */
 
 /* slider */
@@ -552,7 +559,7 @@ input, textarea {
   border: 1px solid #b61f17;
 }
 
-.input-text {
+.input-describe {
   height: 202px;
   resize: none;
   padding-top: 9px;
@@ -583,6 +590,30 @@ input, textarea {
   border-radius: 5px;
   cursor: pointer;
 }/* section 'get-a-quote' */
+
+/* block_massage_submit */
+#block_massage_submit {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 200;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+  opacity: 50%;
+}
+
+#block_massage_submit.hidden {
+  display: none;
+}
+
+#massage_submit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid red;
+  text-align: center;
+}/* block_massage_submit */
 
 /* section 'contact-information' */
 .contact-information>h3 {

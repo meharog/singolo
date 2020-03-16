@@ -11,24 +11,24 @@
 
 <body>
   <div class="wrapper">
-    <header>
+    <header id="header">
       <h1 class="hide-heading">SINGOLO</h1>
       <div class="header-grid">
         <span class="logo">
           <span>singolo</span><span class="asterisk-red">*</span>
         </span>
         <nav>
-          <ul class="navigation-list">
-            <li><a href="#">home</a></li>
-            <li><a href="#">services</a></li>
-            <li><a href="#">portfolio</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">contact</a></li>
+          <ul class="navigation-list" id="menu">
+            <li><a class="active" href="#nav_home">home</a></li>
+            <li><a href="#nav_services">services</a></li>
+            <li><a href="#nav_portfolio">portfolio</a></li>
+            <li><a href="#nav_about">about</a></li>
+            <li><a href="#nav_contact">contact</a></li>
           </ul>
         </nav>
       </div>      
     </header>
-    <div class="slider">
+    <div class="slider" id="nav_home">
       <div class="viewport">
         <div class="vertical-phone">
           <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
@@ -44,7 +44,7 @@
       <div class="left-area-pointer"><div class="left-pointer"></div></div>
       <div class="right-area-pointer"><div class="right-pointer"></div></div>
     </div>
-    <section class="our-services">
+    <section class="our-services" id="nav_services">
       <h2>Our services</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro fugiat similique, repudiandae nemo, soluta consequatur at sit aspernatur a necessitatibus officiis saepe? Nostrum est illum, ullam vero eaque necessitatibus perferendis?</p>
       <ul class="service-list">
@@ -81,7 +81,7 @@
       </ul>
     </section>
 
-    <section class="portfolio">
+    <section class="portfolio" id="nav_portfolio">
       <h2>Portfolio</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, accusamus quae. Totam, autem.</p>
       <ul class="portfolio-select-list">
@@ -129,7 +129,7 @@
         </li>
       </ul>      
     </section>
-    <section class="about-us">
+    <section class="about-us" id="nav_about">
       <h2>About us</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sapiente dolorum iure, eum voluptatem earum perferendis quidem asperiores commodi aspernatur quibusdam? Corporis consequuntur vero fuga officia ad dignissimos nulla.</p>
       <ul class="human-list">
@@ -199,17 +199,28 @@
       </ul>
     </section>
 
-    <section class="get-a-quote">
+    <section class="get-a-quote" id="nav_contact">
       <h2>Get a Quote</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nemo rem doloribus iure non atque ullam minima eveniet quam asperiores quis velit, esse eligendi itaque quisquam ratione? Aspernatur, vel sint.</p>
       <div class="get-a-quote-grid">
         <form class="form" action="#" method="POST">
-          <input class="input input-line" type="text" name="" placeholder="Name (Required)" required>
-          <input class="input input-line" type="email" name="" placeholder="Email (Required)" required>
-          <input class="input input-line" type="text" name="" placeholder="Subject">
-          <textarea class="input input-text" name="" placeholder="Describe yur project in detail..."></textarea>
-          <input class="button input-button" type="submit" value="submit">
+          <input class="input input-name" type="text" name="name" placeholder="Name (Required)" required>
+          <input class="input input-email" type="email" name="email" placeholder="Email (Required)" required>
+          <input class="input input-subject" id="subject" type="text" name="subject" placeholder="Subject">
+          <textarea class="input input-describe" id="describe" name="describe" placeholder="Describe yur project in detail..."></textarea>
+          <input class="button input-button" id="button_submit" type="submit" value="submit">
         </form>
+        <div class="hidden" id="block_massage_submit">
+          <div id="massage_submit">
+            <h3>The letter was sent</h3>
+            <br>
+            <p><span id="massage_subject"></span></p>
+            <br>
+            <p><span id="massage_describe">bla</span></p>
+            <br>
+            <button id="button_close">OK</button>
+          </div>
+        </div>
         <section class="contact-information">
           <h3>Contact information</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab aliquid corporis rem voluptates blanditiis voluptas perferendis eos impedit illum, voluptatem officia temporibus adipisci quidem repellendus.</p>
