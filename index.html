@@ -13,12 +13,18 @@
   <div class="wrapper">
     <header id="header">
       <h1 class="hide-heading">SINGOLO</h1>
+      <div class="burger-toggle">
+        <span class="burger-toggle__img burger-toggle__img_rotate" id="JS-burger-toggle"></span>
+      </div>
       <div class="header-grid">
-        <span class="logo">
-          <span>singolo</span><span class="asterisk-red">*</span>
-        </span>
-        <nav>
-          <ul class="navigation-list" id="menu">
+        
+        <div class="logo">
+          <span class="logo__value logo__value_shift" id="JS-logo__value">
+            <span>singolo</span><span class="asterisk_color">*</span>
+          </span>
+        </div>
+        <nav class="nav-box nav-box_hidden" id="JS-nav-box">
+          <ul class="navigation-list navigation-list_hidden" id="menu">
             <li><a class="active" href="#nav_home">home</a></li>
             <li><a href="#nav_services">services</a></li>
             <li><a href="#nav_portfolio">portfolio</a></li>
@@ -28,72 +34,90 @@
         </nav>
       </div>      
     </header>
-    <div class="slider" id="nav_home">
-      <div class="viewport">
-        <div class="slide" id="slide_0">
-          <div class="vertical-phone">
-            <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
-            <img class="shadow" src="assets/slide/Shadow.png" alt="shadow">
-            <div class="screen"></div>
+    <section class="slider-box">
+      <div class="slider-box__proportional-box">
+        <div class="slider" id="nav_home">
+          <div class="viewport">
+            <div class="slide" id="slide_0">
+              <div class="vertical-phone">
+                <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
+                <img class="shadow" src="assets/slide/shadow_Vertical.png" alt="shadow">
+                <div class="screen"></div>
+              </div>
+              <div class="horizontal-phone">
+                <img class="phone" src="assets/slide/iPhone_Horizontal.png" alt="iPhone">
+                <img class="shadow" src="assets/slide/shadow-Horizontal.png" alt="shadow">
+                <div class="screen"></div>
+              </div>
+            </div>
+            <div class="slide" id="slide_1">
+              <img class="slide_1" src="assets/slide/slide_1.jpg" alt="slide_2">
+            </div>
+            <!-- TODO: del test slide_2-->
+            <!-- <div class="slide" id="slide_2">
+              <div class="horizontal-phone">
+                <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
+                <div class="screen"></div>
+              </div>
+            </div> -->
           </div>
-          <div class="horizontal-phone">
-            <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
-            <img class="shadow" src="assets/slide/Shadow.png" alt="shadow">
-            <div class="screen"></div>
+          <div class="left-area-pointer" id="left_area_pointer">
+            <div class="push-down-pointer"></div>
+            <div class="left-pointer"></div>
+          </div>
+          <div class="right-area-pointer" id="right_area_pointer">
+            <div class="push-down-pointer"></div>
+            <div class="right-pointer"></div>
           </div>
         </div>
-        <div class="slide" id="slide_1">
-          <div class="vertical-phone-1">
-            <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
-            <img class="shadow" src="assets/slide/Shadow.png" alt="shadow">
-            <div class="screen"></div>
-          </div>
-        </div>
-        <!-- TODO: del -->
-        <div class="slide" id="slide_2">
-          <div class="horizontal-phone">
-            <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
-            <img class="shadow" src="assets/slide/Shadow.png" alt="shadow">
-            <div class="screen"></div>
-          </div>
-        </div><!-- del -->
       </div>
-      <div class="left-area-pointer" id="left_area_pointer"><div class="left-pointer"></div></div>
-      <div class="right-area-pointer" id="right_area_pointer"><div class="right-pointer"></div></div>
-    </div>
+    </section>    
+    
     <section class="our-services" id="nav_services">
       <h2>Our services</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro fugiat similique, repudiandae nemo, soluta consequatur at sit aspernatur a necessitatibus officiis saepe? Nostrum est illum, ullam vero eaque necessitatibus perferendis?</p>
       <ul class="service-list">
         <li class="service service-1">
           <img class="service-icon" src="assets/pen.png" alt="pen">
-          <h3>Custom design</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptates voluptatem nesciunt quod.</p>
+          <div class="service__description">
+            <h3>Custom design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptates voluptatem nesciunt quod.</p>
+          </div>
         </li>
         <li class="service service-2">
-          <img class="service-icon" src="assets/phone.png" alt="phone">
-          <h3>Responsive layout</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum quam ex.</p>
+          <img class="service-icon" src="assets/bulb.png" alt="bulb">
+          <div class="service__description">
+            <h3>Innovative ideas</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse possimus minima asperiores! Unde, suscipit.</p>
+          </div>
         </li>
         <li class="service service-3">
-          <img class="service-icon" src="assets/bulb.png" alt="bulb">
-          <h3>Innovative ideas</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse possimus minima asperiores! Unde, suscipit.</p>
+          <img class="service-icon" src="assets/heart.png" alt="heart">
+          <div class="service__description">
+            <h3>Love is the answer</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit animi in optio cupiditate.</p>
+          </div>
         </li>
         <li class="service service-4">
-          <img class="service-icon" src="assets/bubble.png" alt="bubble">
-          <h3>24/7 support</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi quos autem optio.</p>
+          <img class="service-icon" src="assets/phone.png" alt="phone">
+          <div class="service__description">
+            <h3>Responsive layout</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum quam ex.</p>
+          </div>
         </li>
         <li class="service service-5">
-          <img class="service-icon" src="assets/heart.png" alt="heart">
-          <h3>Love is the answer</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit animi in optio cupiditate.</p>
+          <img class="service-icon" src="assets/bubble.png" alt="bubble">
+          <div class="service__description">
+            <h3>24 / 7 support</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore commodi quos autem optio.</p>
+          </div>
         </li>
         <li class="service service-6">
           <img class="service-icon" src="assets/star.png" alt="star">
-          <h3>Feel like a star</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo necessitatibus quam quisquam.</p>
+          <div class="service__description">
+            <h3>Feel like a star</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo necessitatibus quam quisquam.</p>
+          </div>          
         </li>
       </ul>
     </section>
@@ -109,40 +133,71 @@
       </ul>
       <ul class="portfolio-sample-list">
         <li class="portfolio-sample sample-1">
-          <img src="assets/portfolio/sample_1.jpg" alt="sample_1">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_1.jpg" alt="sample_1">
+          </div>
         </li>
         <li class="portfolio-sample sample-2">
-          <img src="assets/portfolio/sample_2.jpg" alt="sample_2">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_2.jpg" alt="sample_2">
+          </div>
         </li>
         <li class="portfolio-sample sample-3">
-          <img src="assets/portfolio/sample_3.jpg" alt="sample_3">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_3.jpg" alt="sample_3" >
+          </div>
         </li>
         <li class="portfolio-sample sample-4">
-          <img src="assets/portfolio/sample_4.jpg" alt="sample_4">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_4.jpg" alt="sample_4">
+          </div>
         </li>
         <li class="portfolio-sample sample-5">
-          <img src="assets/portfolio/sample_5.jpg" alt="sample_5">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_5.jpg" alt="sample_5">
+          </div>
+          
         </li>
         <li class="portfolio-sample sample-6">
-          <img src="assets/portfolio/sample_6.jpg" alt="sample_6">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_6.jpg" alt="sample_6">
+          </div>
+          
         </li>
         <li class="portfolio-sample sample-7">
-          <img src="assets/portfolio/sample_7.jpg" alt="sample_7">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_7.jpg" alt="sample_7">
+          </div>
+          
         </li>
         <li class="portfolio-sample sample-8">
-          <img src="assets/portfolio/sample_8.jpg" alt="sample_8">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_8.jpg" alt="sample_8">
+          </div>
+          
         </li>
         <li class="portfolio-sample sample-9">
-          <img src="assets/portfolio/sample_9.jpg" alt="sample_9">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_9.jpg" alt="sample_9">
+          </div>
+          
         </li>
         <li class="portfolio-sample sample-10">
-          <img src="assets/portfolio/sample_10.jpg" alt="sample_10">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_10.jpg" alt="sample_10">
+          </div>
+          
         </li>
         <li class="portfolio-sample sample-11">
-          <img src="assets/portfolio/sample_11.jpg" alt="sample_11">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_11.jpg" alt="sample_11">
+          </div>
+          
         </li>
         <li class="portfolio-sample sample-12">
-          <img src="assets/portfolio/sample_12.jpg" alt="sample_12">
+          <div class="portfolio-sample__proportional-box">
+            <img class="img-portfolio-sample" src="assets/portfolio/sample_12.jpg" alt="sample_12">
+          </div>
         </li>
       </ul>      
     </section>
@@ -151,10 +206,10 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sapiente dolorum iure, eum voluptatem earum perferendis quidem asperiores commodi aspernatur quibusdam? Corporis consequuntur vero fuga officia ad dignissimos nulla.</p>
       <ul class="human-list">
         <li class="human human-1">
-          <img src="assets/photo/photo_1.jpg" alt="photo_1">
+          <img class="human-photo" src="assets/photo/photo_1.jpg" alt="photo_1">
           <h3>Adam Jensen</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatibus porro exercitationem.</p>
-          <div class="box-social-media">
+          <div class="human__box-social-media">
             <ul class="social-media-link-list">
               <li class="social-media-link link-facebook">
                 <a href="#"><img src="assets/link_facebook.png" alt="facebook"></a>
@@ -172,10 +227,10 @@
           </div>
         </li>
         <li class="human human-2">
-          <img src="assets/photo/photo_2.jpg" alt="photo_2">
+          <img class="human-photo" src="assets/photo/photo_2.jpg" alt="photo_2">
           <h3>Desmond Miles</h3>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error esse necessitatibus voluptatibus ratione debitis.</p>
-          <div class="box-social-media">
+          <div class="human__box-social-media">
             <ul class="social-media-link-list">
               <li class="social-media-link link-facebook">
                 <a href="#"><img src="assets/link_facebook.png" alt="facebook"></a>
@@ -193,10 +248,10 @@
           </div>
         </li>
         <li class="human human-3">
-          <img src="assets/photo/photo_3.jpg" alt="photo_3">
+          <img class="human-photo" src="assets/photo/photo_3.jpg" alt="photo_3">
           <h3>Scolara Visari</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates nihil sequi quae voluptatem.</p>
-          <div class="box-social-media">
+          <div class="human__box-social-media">
             <ul class="social-media-link-list">
               <li class="social-media-link link-facebook">
                 <a href="#"><img src="assets/link_facebook.png" alt="facebook"></a>
@@ -225,15 +280,16 @@
           <input class="input input-email" type="email" name="email" placeholder="Email (Required)" required>
           <input class="input input-subject" id="subject" type="text" name="subject" placeholder="Subject">
           <textarea class="input input-describe" id="describe" name="describe" placeholder="Describe yur project in detail..."></textarea>
-          <input class="button input-button" id="button_submit" type="submit" value="submit">
+          <input class="button input-button" id="button_submit" type="submit" value="SEND">
         </form>
         <div class="hidden" id="block_massage_submit">
+          <div class="block_massage_submit_opacity"></div>
           <div id="massage_submit">
             <h3>The letter was sent</h3>
             <br>
-            <p><span id="massage_subject"></span></p>
+            <p class="massage_subject_p"><span id="massage_subject"></span></p>
             <br>
-            <p><span id="massage_describe">bla</span></p>
+            <p class="massage_describe_p"><span id="massage_describe">bla</span></p>
             <br>
             <button id="button_close">OK</button>
           </div>
@@ -260,20 +316,22 @@
     <footer>
       <div class="footer-grid">
         <span class="copyright">© Copyright 2013</span>
-        <ul class="social-media-link-list">
-          <li class="social-media-link link-facebook">
-            <a href="#"><img src="assets/link_facebook.png" alt="facebook"></a>
-          </li>
-          <li class="social-media-link link-google">
-            <a href="#"><img src="assets/link_google.png" alt="google"></a>
-          </li>
-          <li class="social-media-link link-twitter">
-            <a href="#"><img src="assets/link_twitter.png" alt="twitter"></a>
-          </li>
-          <li class="social-media-link link-linkedIn">
-            <a href="#"><img src="assets/link_linkedIn.png" alt="linkedIn"></a>
-          </li>
-        </ul>
+        <div class="footer-grid__box-social-media">
+          <ul class="social-media-link-list">
+            <li class="social-media-link link-facebook">
+              <a href="#"><img src="assets/link_facebook.png" alt="facebook"></a>
+            </li>
+            <li class="social-media-link link-google">
+              <a href="#"><img src="assets/link_google.png" alt="google"></a>
+            </li>
+            <li class="social-media-link link-twitter">
+              <a href="#"><img src="assets/link_twitter.png" alt="twitter"></a>
+            </li>
+            <li class="social-media-link link-linkedIn">
+              <a href="#"><img src="assets/link_linkedIn.png" alt="linkedIn"></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   </div>

@@ -1,12 +1,8 @@
-const MENU = document.getElementById('menu');
 const VIEWPORT_SLIDE = document.getElementsByClassName('viewport')[0];
 const BUTTON_SLIDE_LEFT = document.getElementById('left_area_pointer');
 const BUTTON_SLIDE_RIGHT = document.getElementById('right_area_pointer');
 
-const BUTTON_SUBMIT = document.getElementById('button_submit');//submit form button
-const BUTTON_CLOSE = document.getElementById('button_close');//close submit button
-
-// TODO: переместить вниз
+// TODO: down
 // ---> slider
 // let PHONE_SCREENS = VIEWPORT_SLIDE.getElementsByClassName('screen');
 function hidePhoneScreens(slide) {
@@ -94,8 +90,34 @@ function moveSlide(viewport, slMass, direction) {
 
 
 
-
 // ---> navigation menu
+const BURGER_TOGGLE = document.getElementById('JS-burger-toggle');
+const LOGO_VALUE = document.getElementById('JS-logo__value');
+const NAV_BOX = document.getElementById('JS-nav-box');
+const MENU = document.getElementById('menu');
+
+function openBurger (eve) {
+  BURGER_TOGGLE.classList.remove('burger-toggle__img_rotate');
+  LOGO_VALUE.classList.remove('logo__value_shift');
+  NAV_BOX.classList.remove('nav-box_hidden');
+  MENU.classList.remove('navigation-list_hidden');
+
+  BURGER_TOGGLE.removeEventListener ('click', openBurger);
+  BURGER_TOGGLE.addEventListener ('click', closeBurger);
+}
+
+function closeBurger (eve) {
+  BURGER_TOGGLE.classList.add('burger-toggle__img_rotate');
+  LOGO_VALUE.classList.add('logo__value_shift');
+  NAV_BOX.classList.add('nav-box_hidden');
+  MENU.classList.add('navigation-list_hidden');
+
+  BURGER_TOGGLE.removeEventListener ('click', closeBurger);
+  BURGER_TOGGLE.addEventListener ('click', openBurger);
+}
+
+BURGER_TOGGLE.addEventListener ('click', openBurger);
+
 MENU.addEventListener('click', function (eve) {
   eve.preventDefault()
   MENU.querySelectorAll('a').forEach(function (a) {
@@ -104,10 +126,17 @@ MENU.addEventListener('click', function (eve) {
   eve.target.classList.add('active');
   let id = eve.target.getAttribute('href').slice(1);
   let Y = document.getElementById(id).offsetTop - 95;
+  if (window.innerWidth < 768) {
+    Y = Y + 24; 
+    closeBurger();
+  }
   window.scroll(0, Y);
 }); // navigation menu <---
 
 // ---> submit form
+const BUTTON_SUBMIT = document.getElementById('button_submit');//submit form button
+const BUTTON_CLOSE = document.getElementById('button_close');//close submit button
+
 BUTTON_SUBMIT.addEventListener('click', function (eve) {
   const INPUT_NAME_VALIDATION = document.getElementsByClassName('input-name')[0].checkValidity();
   const INPUT_EMAIL_VALIDATION = document.getElementsByClassName('input-email')[0].checkValidity();
