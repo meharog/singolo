@@ -1,3 +1,39 @@
+// ---> portfolio
+const PORTFOLIO_SAMPLES = document.getElementById('JS-portfolio-sample-list');
+const SAMPLES_ARR = PORTFOLIO_SAMPLES.querySelectorAll('.portfolio-sample');
+
+SAMPLES_ARR.forEach(function (sample) {
+  sample.addEventListener('click', function (eve) {
+    SAMPLES_ARR.forEach(function (smp) {
+      smp.classList.remove('portfolio-sample_select')
+    });
+    eve.currentTarget.classList.add('portfolio-sample_select');
+  });
+});
+
+const PORTFOLIO_MENU = document.getElementById('JS-portfolio-menu').querySelectorAll('.portfolio-select');
+
+PORTFOLIO_MENU.forEach(function (select) {
+  select.addEventListener('click', function (eve) {
+    PORTFOLIO_MENU.forEach(function (a) {
+      a.classList.remove('portfolio-select_active')
+    });
+    eve.target.classList.add('portfolio-select_active');
+
+    // ---> sort order
+    let orderTyp = eve.currentTarget.dataset.order;
+    let sortSamplesArr = [];
+
+    SAMPLES_ARR.forEach(function (sample) {
+      let k = sample.dataset[orderTyp];
+      sortSamplesArr[k] = sample;
+    });
+    sortSamplesArr.forEach(function (sample) {
+      PORTFOLIO_SAMPLES.appendChild(sample);
+    });// sort order <---
+  });
+});// portfolio <---
+
 // ---> slider
 const VIEWPORT_SLIDE = document.getElementsByClassName('viewport')[0];
 const BUTTON_SLIDE_LEFT = document.getElementById('left_area_pointer');

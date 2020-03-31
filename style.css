@@ -471,9 +471,14 @@ header {
 }
 
 .portfolio-select:hover {
-  color: #dedede;
+  /* color: #dedede; */
   border: 1px solid #c5c5c5;
   cursor: pointer;
+}
+
+.portfolio-select_active {
+  color: #dedede;
+  border: 1px solid #c5c5c5;
 }
 
 .portfolio-sample-list {
@@ -504,6 +509,10 @@ header {
   /* height: 187px; */
   /* height: 100%; */
   overflow: hidden;
+}
+
+.portfolio-sample_select {
+  outline: 5px solid #ec9f9b;;
 }
 
 .portfolio-sample__proportional-box {
