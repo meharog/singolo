@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id="JS-wrapper">
     <header id="header">
       <h1 class="hide-heading">SINGOLO</h1>
       <div class="burger-toggle">
@@ -34,9 +34,9 @@
         </nav>
       </div>      
     </header>
-    <section class="slider-box">
+    <section class="slider-box" id="nav_home">
       <div class="slider-box__proportional-box">
-        <div class="slider" id="nav_home">
+        <div class="slider">
           <div class="viewport">
             <div class="slide" id="slide_0">
               <div class="vertical-phone">
@@ -51,14 +51,11 @@
               </div>
             </div>
             <div class="slide" id="slide_1">
-              <img class="slide_1" src="assets/slide/slide_1.jpg" alt="slide_2">
+              <img class="slide_1" src="assets/slide/slide_1.jpg" alt="slide_1">
             </div>
             <!-- TODO: del test slide_2-->
             <!-- <div class="slide" id="slide_2">
-              <div class="horizontal-phone">
-                <img class="phone" src="assets/slide/iPhone_Vertical.png" alt="iPhone">
-                <div class="screen"></div>
-              </div>
+              <img class="slide_2" src="assets/slide/slide_2.png" alt="slide_2">
             </div> -->
           </div>
           <div class="left-area-pointer" id="left_area_pointer">
@@ -276,8 +273,8 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nemo rem doloribus iure non atque ullam minima eveniet quam asperiores quis velit, esse eligendi itaque quisquam ratione? Aspernatur, vel sint.</p>
       <div class="get-a-quote-grid">
         <form class="form" action="#" method="POST">
-          <input class="input input-name" type="text" name="name" placeholder="Name (Required)" required>
-          <input class="input input-email" type="email" name="email" placeholder="Email (Required)" required>
+          <input class="input input-name" id="name" type="text" name="name" placeholder="Name (Required)" required>
+          <input class="input input-email" id="email" type="email" name="email" placeholder="Email (Required)" required>
           <input class="input input-subject" id="subject" type="text" name="subject" placeholder="Subject">
           <textarea class="input input-describe" id="describe" name="describe" placeholder="Describe yur project in detail..."></textarea>
           <input class="button input-button" id="button_submit" type="submit" value="SEND">

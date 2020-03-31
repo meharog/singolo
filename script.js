@@ -1,94 +1,60 @@
+// ---> slider
 const VIEWPORT_SLIDE = document.getElementsByClassName('viewport')[0];
 const BUTTON_SLIDE_LEFT = document.getElementById('left_area_pointer');
 const BUTTON_SLIDE_RIGHT = document.getElementById('right_area_pointer');
 
-// TODO: down
-// ---> slider
-// let PHONE_SCREENS = VIEWPORT_SLIDE.getElementsByClassName('screen');
-function hidePhoneScreens(slide) {
-  const PHONE_SCREENS = document.getElementsByClassName('screen');
+function hidePhoneScreens() {
+  const PHONE_SCREENS = document.querySelectorAll('.screen');
   for (let i = 0; i < PHONE_SCREENS.length; i++) {
     PHONE_SCREENS[i].addEventListener('click', function (eve) {
-      (eve.target.classList.contains('hidden')) ? eve.target.classList.remove('hidden') : eve.target.classList.add('hidden')
+      (eve.target.classList.contains('screen_hidden')) ? eve.target.classList.remove('screen_hidden') : eve.target.classList.add('screen_hidden')
     });
   };
-}
-
-const SLIDES = document.querySelectorAll('.slide');
-// let slider = [];
-for (let i = 0; i < SLIDES.length; i++) {
-  // const element = s[i];
-  // slider[i] = SLIDES[i].cloneNode(true)
-  SLIDES[i].remove();
-}
-
-SLIDES.step = 0;
-SLIDES.offset = 1020;
-let slideStep = 0;
-// let slideOffset = 0;
-// let slideWidth = 1020;//
-// let Offset = 1020;
-
-
-function drawM(viewport, slMass, step) {
-  let slide = slMass[step];
-  slide.style.left = 0 + 'px';//
-  viewport.appendChild(slide.cloneNode(true));
-  // hidePhoneScreens();
-  
 };
-
-function drawR(viewport, slMass, step, offset) {
-  (step === slMass.length - 1) ? step = 0 : step++;
-  let slide = slMass[step];
-  slide.style.left = slMass.offset + 'px';
-  viewport.appendChild(slide.cloneNode(true));
-  // hidePhoneScreens();
-};
-
-function drawL(viewport, slMass, step, offset) {
-  (step === 0) ? step = slMass.length - 1 : step--;
-  let slide = slMass[step];
-  slide.style.left = -1 * slMass.offset + 'px';
-  // viewport.appendChild(slide.cloneNode(true));
-  viewport.insertBefore(slide.cloneNode(true), viewport.firstChild)
-  // hidePhoneScreens();
-};
-
-drawL(VIEWPORT_SLIDE, SLIDES, SLIDES.step);
-drawM(VIEWPORT_SLIDE, SLIDES, SLIDES.step);
-drawR(VIEWPORT_SLIDE, SLIDES, SLIDES.step);
-// slideStep
 hidePhoneScreens();
-// let stepX = 0;
-BUTTON_SLIDE_RIGHT.addEventListener('click', function () { moveSlide(VIEWPORT_SLIDE, SLIDES, 'R') });
-BUTTON_SLIDE_LEFT.addEventListener('click', function () { moveSlide(VIEWPORT_SLIDE, SLIDES, 'L') });
-// function right(viewport, slMass, step, offset, direction)
-function moveSlide(viewport, slMass, direction) {
-  const VIEW_SLIDES = document.querySelectorAll('.slide');
 
-  if (direction === 'R') {
-    for (let i = 0; i < VIEW_SLIDES.length; i++) {
-      VIEW_SLIDES[i].style.left = (i - 1) * slMass.offset - slMass.offset + 'px';
-      // hidePhoneScreens(VIEW_SLIDES[i]);
-    };
-    (slMass.step === slMass.length - 1) ? slMass.step = 0 : slMass.step++;
-    VIEW_SLIDES[0].remove();
-    drawR(viewport, slMass, slMass.step);
+let slidesMas = document.querySelectorAll('.slide');
+let slideOffset = 1020;
+let slideStep = 0;
 
-  } else if (direction === 'L') {
-    for (let i = 0; i < VIEW_SLIDES.length; i++) {
-      VIEW_SLIDES[i].style.left = (i - 1) * slMass.offset + slMass.offset + 'px';
-      // hidePhoneScreens(VIEW_SLIDES[i]);
-    };
-    (slMass.step === 0) ? slMass.step = slMass.length - 1 : slMass.step--;
-    VIEW_SLIDES[2].remove();
-    drawL(viewport, slMass, slMass.step);
+for (let i = 0; i < slidesMas.length; i++) {
+  slidesMas[i].style.left = slideOffset * i + 'px';  
+}
+
+BUTTON_SLIDE_RIGHT.addEventListener('click', function () { moveSlideR() });
+function moveSlideR() {
+  slidesMas = document.querySelectorAll('.slide');
+  if (slideStep === slidesMas.length - 1) {
+    slidesMas[0].style.left = slideOffset * 1 + 'px';
+    slidesMas[0].classList.add('slide_res');
+    VIEWPORT_SLIDE.appendChild(slidesMas[0]);    
   };
-  hidePhoneScreens();
+  setTimeout(function () {
+    slidesMas[0].classList.remove('slide_res');
+    for (let i = 0; i < slidesMas.length; i++) {
+      slidesMas[i].style.left = parseInt(slidesMas[i].style.left) - slideOffset + 'px';  
+    };
+  }, 100);
+  if (slideStep < slidesMas.length - 1) {slideStep++};
+};
+
+BUTTON_SLIDE_LEFT.addEventListener('click', function () { moveSlideL() });
+function moveSlideL() {
+  slidesMas = document.querySelectorAll('.slide');
+  if (slideStep === 0) {
+    slidesMas[slidesMas.length - 1].style.left = slideOffset * -1 + 'px';
+    slidesMas[slidesMas.length - 1].style.left = '-1020px';
+    slidesMas[slidesMas.length - 1].classList.add('slide_res');
+    VIEWPORT_SLIDE.insertBefore(slidesMas[slidesMas.length - 1], slidesMas[0]);
+  };
+  setTimeout(function () {
+    slidesMas[slidesMas.length - 1].classList.remove('slide_res');
+    for (let i = 0; i < slidesMas.length; i++) {
+      slidesMas[i].style.left = parseInt(slidesMas[i].style.left) + slideOffset + 'px';  
+    };
+  }, 100);
+  if (slideStep > 0) {slideStep--};
 };// slider <---
-
-
 
 // ---> navigation menu
 const BURGER_TOGGLE = document.getElementById('JS-burger-toggle');
@@ -129,8 +95,29 @@ MENU.addEventListener('click', function (eve) {
   if (window.innerWidth < 768) {
     Y = Y + 24; 
     closeBurger();
-  }
+  };
   window.scroll(0, Y);
+});
+
+document.addEventListener('scroll', function (eve) {
+  let curPos = window.scrollY;
+  let sections = document.querySelectorAll('#JS-wrapper>section');
+  let offsetAdd = 95;
+
+  if (window.innerWidth < 768) {
+    offsetAdd = 71;
+  };
+  
+  sections.forEach(function (section) {
+    if (section.offsetTop <= (curPos + offsetAdd) && (section.offsetTop + section.offsetHeight) > (curPos + offsetAdd)) {
+      MENU.querySelectorAll('a').forEach(function (a) {
+        a.classList.remove('active')
+        if (section.getAttribute('id') === a.getAttribute('href').slice(1)) {
+          a.classList.add('active');
+        };
+      });
+    };
+  });
 }); // navigation menu <---
 
 // ---> submit form
@@ -161,7 +148,11 @@ BUTTON_SUBMIT.addEventListener('click', function (eve) {
 });
 
 BUTTON_CLOSE.addEventListener('click', function () {
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('subject').value = '';
+  document.getElementById('describe').value = '';
   document.getElementById('massage_subject').innerText = '';
   document.getElementById('massage_describe').innerText = '';
-  document.getElementById('block_massage_submit').classList.add('hidden')
+  document.getElementById('block_massage_submit').classList.add('hidden');  
 });// submit form <---
